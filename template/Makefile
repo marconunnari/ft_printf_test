@@ -1,4 +1,4 @@
-NAME=1arg
+NAME=
 CORRECT=$(NAME)_correct
 
 all: $(CORRECT) $(NAME)
