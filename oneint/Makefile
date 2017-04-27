@@ -1,4 +1,4 @@
-NAME=onestring
+NAME=oneint
 CORRECT=$(NAME)_correct
 
 all: $(CORRECT) $(NAME)
