@@ -10,4 +10,6 @@ int		main(int argc, char **argv)
 	ft_asprintf(&r1, "pointer: %p\n", s);
 	asprintf(&r2, "pointer: %p\n", s);
 	ft_printf("%d\n", ft_strequ(r1, r2));
+	ft_strdel(&r1);
+	ft_strdel(&r2);
 }
