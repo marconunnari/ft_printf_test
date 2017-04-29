@@ -16,8 +16,5 @@ int		main(int argc, char **argv)
 	ft_putnbr(ft_strlen(res->length));
 	ft_putstr("\n");
 
-	ft_putnbr(ft_strlen(res->type));
-	ft_putstr("\n");
-
 	free_placeholder(res);
 }
