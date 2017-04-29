@@ -26,4 +26,7 @@ int		main(int argc, char **argv)
 	printf("%02d\n", (int)strtoul(argv[1], NULL, 10));
 	printf("%010d\n", (int)strtoul(argv[1], NULL, 10));
 	printf("%050d\n", (int)strtoul(argv[1], NULL, 10));
+
+	printf("%0-10dend\n", (int)strtoul(argv[1], NULL, 10));
+	printf("%-010dend\n", (int)strtoul(argv[1], NULL, 10));
 }

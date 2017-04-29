@@ -18,4 +18,12 @@ int		main(int argc, char **argv)
 	ft_printf("int i with flag space: % i\n", ft_atoi(argv[1]));
 	ft_printf("int d with flag space and plus: %+ d\n", ft_atoi(argv[1]));
 	ft_printf("int i with flag space and plus: % +i\n", ft_atoi(argv[1]));
+	ft_printf("int d with length hh: %hhd\n", ft_atoi(argv[1]));
+	ft_printf("int d with length h: %hd\n", strtoull(argv[1], NULL, 10));
+	ft_printf("int d with length l: %ld\n", strtoull(argv[1], NULL, 10));
+	ft_printf("int d with length ll: %lld\n", strtoull(argv[1], NULL, 10));
+	ft_printf("int d with length j: %jd\n", strtoull(argv[1], NULL, 10));
+	ft_printf("int d with length z: %zd\n", strtoull(argv[1], NULL, 10));
+	ft_printf("unsigned int with length ll: %llu\n", strtoull(argv[1], NULL, 10));
+	ft_printf("hex up with length ll: %llX\n", strtoull(argv[1], NULL, 10));
 }

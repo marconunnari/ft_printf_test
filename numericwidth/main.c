@@ -25,4 +25,7 @@ int		main(int argc, char **argv)
 	ft_printf("%02d\n", (int)strtoul(argv[1], NULL, 10));
 	ft_printf("%010d\n", (int)strtoul(argv[1], NULL, 10));
 	ft_printf("%050d\n", (int)strtoul(argv[1], NULL, 10));
+
+	ft_printf("%0-10dend\n", (int)strtoul(argv[1], NULL, 10));
+	ft_printf("%-010dend\n", (int)strtoul(argv[1], NULL, 10));
 }

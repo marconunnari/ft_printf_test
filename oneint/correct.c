@@ -19,5 +19,13 @@ int		main(int argc, char **argv)
 	printf("int i with flag space: % i\n", atoi(argv[1]));
 	printf("int d with flag space and plus: %+ d\n", atoi(argv[1]));
 	printf("int i with flag space and plus: % +i\n", atoi(argv[1]));
+	printf("int d with length hh: %hhd\n", atoi(argv[1]));
+	printf("int d with length h: %hd\n", strtoull(argv[1], NULL, 10));
+	printf("int d with length l: %ld\n", strtoull(argv[1], NULL, 10));
+	printf("int d with length ll: %lld\n", strtoull(argv[1], NULL, 10));
+	printf("int d with length j: %jd\n", strtoull(argv[1], NULL, 10));
+	printf("int d with length z: %zd\n", strtoull(argv[1], NULL, 10));
+	printf("unsigned int with length ll: %llu\n", strtoull(argv[1], NULL, 10));
+	printf("hex up with length ll: %llX\n", strtoull(argv[1], NULL, 10));
 
 }
