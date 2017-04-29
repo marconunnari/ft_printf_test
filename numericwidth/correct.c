@@ -18,4 +18,12 @@ int		main(int argc, char **argv)
 	printf("%#2X\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	printf("%#10X\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	printf("%#50X\n", (unsigned int)strtoul(argv[1], NULL, 10));
+
+	printf("%2p\n", (void *)strtoul(argv[1], NULL, 10));
+	printf("%10p\n", (void *)strtoul(argv[1], NULL, 10));
+	printf("%50p\n", (void *)strtoul(argv[1], NULL, 10));
+
+	printf("%02d\n", (int)strtoul(argv[1], NULL, 10));
+	printf("%010d\n", (int)strtoul(argv[1], NULL, 10));
+	printf("%050d\n", (int)strtoul(argv[1], NULL, 10));
 }
