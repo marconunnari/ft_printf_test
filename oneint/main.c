@@ -4,4 +4,18 @@ int		main(int argc, char **argv)
 {
 	ft_printf("int d: %d\n", ft_atoi(argv[1]));
 	ft_printf("int i: %i\n", ft_atoi(argv[1]));
+	ft_printf("unsigned int: %u\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("hex low: %x\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("hex up: %X\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("octal: %o\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("hashtag hex low: %#x\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("hashtag hex upp: %#X\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("hashtag octal: %#o\n", (unsigned int)strtoul(argv[1], NULL, 10));
+	ft_printf("pointer: %p\n", (void*)strtoul(argv[1], NULL, 10));
+	ft_printf("int d with flag plus: %+d\n", ft_atoi(argv[1]));
+	ft_printf("int i with flag plus: %+i\n", ft_atoi(argv[1]));
+	ft_printf("int d with flag space: % d\n", ft_atoi(argv[1]));
+	ft_printf("int i with flag space: % i\n", ft_atoi(argv[1]));
+	ft_printf("int d with flag space and plus: %+ d\n", ft_atoi(argv[1]));
+	ft_printf("int i with flag space and plus: % +i\n", ft_atoi(argv[1]));
 }

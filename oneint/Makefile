@@ -4,7 +4,7 @@ CORRECT=$(NAME)_correct
 all: $(CORRECT) $(NAME)
 
 $(CORRECT):
-	gcc -o $(CORRECT) correct.c
+	gcc -Wno-format -o $(CORRECT) correct.c
 
 $(NAME):
 	make re -C ../ft_printf
