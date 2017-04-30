@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+printf("D: %D\n", $ARGV[0]);
+printf("U: %U\n", $ARGV[0]);
+printf("O: %O\n", $ARGV[0]);
