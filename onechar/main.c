@@ -2,6 +2,9 @@
 
 int		main(int argc, char **argv)
 {
-	ft_printf("char: %c\n", argv[1][0]);
-	ft_printf("%10c\n", argv[1][0]);
+	int res;
+	res = ft_printf("char: %c\n", argv[1][0]);
+	ft_printf("%d\n", res);
+	res = ft_printf("%10c\n", argv[1][0]);
+	ft_printf("%d\n", res);
 }

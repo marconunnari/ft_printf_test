@@ -2,5 +2,7 @@
 
 int		main(int argc, char **argv)
 {
-	ft_printf("percent %%\n");
+	int res;
+	res = ft_printf("percent %%\n");
+	ft_printf("%d\n", res);
 }

@@ -2,5 +2,7 @@
 
 int		main(int argc, char **argv)
 {
-	printf("percent %%\n");
+	int res;
+	res = printf("percent %%\n");
+	printf("%d\n", res);
 }

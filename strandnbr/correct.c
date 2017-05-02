@@ -2,5 +2,7 @@
 
 int		main(int argc, char **argv)
 {
-	printf("%s%d%%%s%u\n", "hello", 42, "world", 24);
+	int res;
+	res = printf("%s%d%%%s%u\n", "hello", 42, "world", 24);
+	printf("%d\n", res);
 }
