@@ -21,5 +21,4 @@ int		main(int argc, char **argv)
 	printf("%03.2d\n", 1);
 	printf("%03.2d\n", -1);
 	printf("@moulitest: %.10d\n", -42);
-	printf("%hU\n", 4294967296);
 }

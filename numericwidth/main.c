@@ -32,13 +32,6 @@ int		main(int argc, char **argv)
 	res = ft_printf("%#50X\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	ft_printf("%d\n", res);
 
-	res = ft_printf("%2p\n", (void *)strtoul(argv[1], NULL, 10));
-	ft_printf("%d\n", res);
-	res = ft_printf("%10p\n", (void *)strtoul(argv[1], NULL, 10));
-	ft_printf("%d\n", res);
-	res = ft_printf("%50p\n", (void *)strtoul(argv[1], NULL, 10));
-	ft_printf("%d\n", res);
-
 	res = ft_printf("%02d\n", (int)strtoul(argv[1], NULL, 10));
 	ft_printf("%d\n", res);
 	res = ft_printf("%010d\n", (int)strtoul(argv[1], NULL, 10));

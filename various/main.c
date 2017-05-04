@@ -21,5 +21,4 @@ int		main(int argc, char **argv)
 	ft_printf("%03.2d\n", 1);
 	ft_printf("%03.2d\n", -1);
 	ft_printf("@moulitest: %.10d\n", -42);
-	ft_printf("%hU\n", 4294967296);
 }

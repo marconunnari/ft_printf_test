@@ -22,8 +22,6 @@ int		main(int argc, char **argv)
 	printf("%d\n",res);
 	res = printf("hashtag octal: %#o\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	printf("%d\n",res);
-	res = printf("pointer: %p\n", (void*)strtoul(argv[1], NULL, 10));
-	printf("%d\n",res);
 	res = printf("int d with flag plus: %+d\n", atoi(argv[1]));
 	printf("%d\n",res);
 	res = printf("int i with flag plus: %+i\n", atoi(argv[1]));

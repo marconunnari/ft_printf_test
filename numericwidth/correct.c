@@ -33,13 +33,6 @@ int		main(int argc, char **argv)
 	res = printf("%#50X\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	printf("%d\n", res);
 
-	res = printf("%2p\n", (void *)strtoul(argv[1], NULL, 10));
-	printf("%d\n", res);
-	res = printf("%10p\n", (void *)strtoul(argv[1], NULL, 10));
-	printf("%d\n", res);
-	res = printf("%50p\n", (void *)strtoul(argv[1], NULL, 10));
-	printf("%d\n", res);
-
 	res = printf("%02d\n", (int)strtoul(argv[1], NULL, 10));
 	printf("%d\n", res);
 	res = printf("%010d\n", (int)strtoul(argv[1], NULL, 10));

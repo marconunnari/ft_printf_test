@@ -21,8 +21,6 @@ int		main(int argc, char **argv)
 	ft_printf("%d\n",res);
 	res = ft_printf("hashtag octal: %#o\n", (unsigned int)strtoul(argv[1], NULL, 10));
 	ft_printf("%d\n",res);
-	res = ft_printf("pointer: %p\n", (void*)strtoul(argv[1], NULL, 10));
-	ft_printf("%d\n",res);
 	res = ft_printf("int d with flag plus: %+d\n", ft_atoi(argv[1]));
 	ft_printf("%d\n",res);
 	res = ft_printf("int i with flag plus: %+i\n", ft_atoi(argv[1]));
