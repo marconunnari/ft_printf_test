@@ -8,10 +8,11 @@ $args = join(', ', @ARGV);
 
 sub dogeneric
 {
-	system "cp generic.c generic.c.bak";
-	open(BAK, "<generic.c.bak");
-	open(FILE, ">generic.c");
+	my $gen = "generic";
 
+	system ("cp ${gen}.c ${gen}.c.bak");
+	open(BAK, "<${gen}.c.bak");
+	open(FILE, ">${gen}.c");
 	while (<BAK>) {
 		s/__FORMAT__/\"$format\"/;
 		s/__ARGS__/$args/;
@@ -21,13 +22,21 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	system "cp genericc.c genericc.c.bak";
-	open(BAK, "<genericc.c.bak");
-	open(FILE, ">genericc.c");
-
+	system ("cp ${gen}c.c ${gen}c.c.bak");
+	open(BAK, "<${gen}c.c.bak");
+	open(FILE, ">${gen}c.c");
 	while (<BAK>) {
 		s/__FORMAT__/\"$format\"/;
 		s/__ARGS__/$args/;
 		print FILE;
 	}
+
+	system ("gcc ${gen}.c -Ift_printf/includes -Lft_printf -lftprintf");
+	system ("gcc ${gen}c.c -o ft_printf_test_correct");
+
+	system ("mv ${gen}.c.bak ${gen}.c");
+	system ("mv ${gen}c.c.bak ${gen}c.c");
+
+	system ("./a.out && rm a.out");
 }
+
