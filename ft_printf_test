@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+use 5.010;
+
+$format = shift @ARGV;
+$args = join(', ', @ARGV);
+
+&dogeneric;
+
+sub dogeneric
+{
+	system "cp generic.c generic.c.bak";
+	open(BAK, "<generic.c.bak");
+	open(FILE, ">generic.c");
+
+	while (<BAK>) {
+		s/__FORMAT__/\"$format\"/;
+		s/__ARGS__/$args/;
+		print FILE;
+	}
+
+	close BAK;
+	close FILE;
+
+	system "cp genericc.c genericc.c.bak";
+	open(BAK, "<genericc.c.bak");
+	open(FILE, ">genericc.c");
+
+	while (<BAK>) {
+		s/__FORMAT__/\"$format\"/;
+		s/__ARGS__/$args/;
+		print FILE;
+	}
+}
