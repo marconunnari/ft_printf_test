@@ -1,9 +1,0 @@
-#include "libftprintf.h"
-
-int		main(int argc, char **argv)
-{
-	int res;
-	res = ft_printf("string1: %s, string2: %s\n", argv[1], argv[2]);
-	res = ft_printf("%s%s\n", argv[1], argv[2]);
-	ft_printf("%d\n", res);
-}

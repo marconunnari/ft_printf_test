@@ -1,4 +1,0 @@
-#!/usr/bin/perl
-use 5.010;
-
-printf("bin with length j: %b\n", $ARGV[0]);
