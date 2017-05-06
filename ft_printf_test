@@ -31,6 +31,7 @@ sub dogeneric
 		print FILE;
 	}
 
+	system "make -C ft_printf >/dev/null";
 	system ("gcc ${gen}.c -Ift_printf/includes -Lft_printf -lftprintf");
 	system ("gcc ${gen}c.c -o ft_printf_test_correct");
 

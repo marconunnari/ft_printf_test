@@ -1,2 +1,1 @@
-"%s %s" '"hello"' '"world"'
-"numbers %d %d" 42 84
+"%s" '"hello world"'
