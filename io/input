@@ -1,1 +1,3 @@
 "%s" '"hello world"'
+"%s %s" '"hello"' '"world"'
+"%d" 42

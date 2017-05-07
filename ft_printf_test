@@ -8,7 +8,7 @@ $args = join(', ', @ARGV);
 
 sub dogeneric
 {
-	my $gen = "generic";
+	my $gen = "srcs/generic";
 
 	system ("cp ${gen}.c ${gen}.c.bak");
 	open(BAK, "<${gen}.c.bak");
