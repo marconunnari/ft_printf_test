@@ -25,25 +25,10 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	&execute ("cp ${name}c.c ${name}c.c.bak");
-	open(BAK, "<${name}c.c.bak");
-	open(FILE, ">${name}c.c");
-	while (<BAK>) {
-		s/__FORMAT__/\"$format\"/;
-		s/__ARGS__/$args/;
-		print FILE;
-	}
-
 	&execute ("make -C ft_printf >/dev/null");
-	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
-	&execute ("gcc -Wno-overflow -Wno-format ${name}c.c -o ft_printf_test_correct");
-
+	&execute ("gcc -Wno-overflow -o ft_printf_main ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
 	&execute ("mv ${name}.c.bak ${name}.c");
-	&execute ("mv ${name}c.c.bak ${name}c.c");
-
-	&execute ("./a.out && rm a.out");
 }
-
 sub execute
 {
 	my $cmd = shift;

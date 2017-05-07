@@ -1,0 +1,4 @@
+"%D" LONG_MIN
+"%D" 0L
+"%D" 42L
+"%D" LONG_MAX
