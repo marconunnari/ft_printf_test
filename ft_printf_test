@@ -1,18 +1,21 @@
 #!/usr/bin/perl
 use 5.010;
+use Encode qw(decode_utf8);
 
 $format = shift @ARGV;
-$args = join(', ', @ARGV);
+$args = '';
+$args = join(', ', @ARGV) if ($#ARGV + 1);
+$args = ", $args" if ($#ARGV + 1);
 
 &dogeneric;
 
 sub dogeneric
 {
-	my $gen = "srcs/generic";
+	my $name = "srcs/generic";
 
-	system ("cp ${gen}.c ${gen}.c.bak");
-	open(BAK, "<${gen}.c.bak");
-	open(FILE, ">${gen}.c");
+	&execute ("cp ${name}.c ${name}.c.bak");
+	open(BAK, "<${name}.c.bak");
+	open(FILE, ">${name}.c");
 	while (<BAK>) {
 		s/__FORMAT__/\"$format\"/;
 		s/__ARGS__/$args/;
@@ -22,22 +25,42 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	system ("cp ${gen}c.c ${gen}c.c.bak");
-	open(BAK, "<${gen}c.c.bak");
-	open(FILE, ">${gen}c.c");
+	&execute ("cp ${name}c.c ${name}c.c.bak");
+	open(BAK, "<${name}c.c.bak");
+	open(FILE, ">${name}c.c");
 	while (<BAK>) {
 		s/__FORMAT__/\"$format\"/;
 		s/__ARGS__/$args/;
 		print FILE;
 	}
 
-	system "make -C ft_printf >/dev/null";
-	system ("gcc ${gen}.c -Ift_printf/includes -Lft_printf -lftprintf");
-	system ("gcc ${gen}c.c -o ft_printf_test_correct");
+	&execute ("make -C ft_printf >/dev/null");
+	&execute ("gcc ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
+	&execute ("gcc -Wno-format ${name}c.c -o ft_printf_test_correct");
 
-	system ("mv ${gen}.c.bak ${gen}.c");
-	system ("mv ${gen}c.c.bak ${gen}c.c");
+	&execute ("mv ${name}.c.bak ${name}.c");
+	&execute ("mv ${name}c.c.bak ${name}c.c");
 
-	system ("./a.out && rm a.out");
+	&execute ("./a.out && rm a.out");
 }
 
+sub dowstr
+{
+	my $name = "srcs/wstr";
+	&execute ("make -C ft_printf >/dev/null");
+	&execute ("gcc ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
+	&execute ("gcc -Wno-format ${name}c.c -o ft_printf_test_correct");
+	&execute ("./a.out && rm a.out");
+}
+
+sub execute
+{
+	my $cmd = shift;
+#	say "\$> $cmd";
+	system $cmd;
+}
+
+#my %dispatch = (
+#	"wide strings" => \&dowstr,
+#);
+#exists $dispatch{$format} ? $dispatch{$format} -> () : &dogeneric;

@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <locale.h>
+#include <limits.h>
 
 int		main(int argc, char **argv)
 {
-	int res = printf(__FORMAT__, __ARGS__); printf(" r%d\n", res);
+	setlocale(LC_ALL, "");
+	int res = printf(__FORMAT____ARGS__); printf(" r%d\n", res);
 }
