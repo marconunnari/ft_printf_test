@@ -17,7 +17,7 @@ sub dogeneric
 	open(BAK, "<${name}.c.bak");
 	open(FILE, ">${name}.c");
 	while (<BAK>) {
-		s/__FORMAT__/\"$format\"/;
+		s/__FORMAT__/$format/;
 		s/__ARGS__/$args/;
 		print FILE;
 	}
@@ -25,22 +25,9 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	&execute ("cp ${name}c.c ${name}c.c.bak");
-	open(BAK, "<${name}c.c.bak");
-	open(FILE, ">${name}c.c");
-	while (<BAK>) {
-		s/__FORMAT__/\"$format\"/;
-		s/__ARGS__/$args/;
-		print FILE;
-	}
-
 	&execute ("make -C ft_printf >/dev/null");
 	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
-	&execute ("gcc -Wno-overflow -Wno-format ${name}c.c -o ft_printf_test_correct");
-
 	&execute ("mv ${name}.c.bak ${name}.c");
-	&execute ("mv ${name}c.c.bak ${name}c.c");
-
 	&execute ("./a.out && rm a.out");
 }
 

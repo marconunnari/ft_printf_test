@@ -27,8 +27,8 @@
 "%o" 42
 "%o" UINT_MAX
 #
-"%p" 42
-"%p" UINT_MAX
+"%p" "(void*)42"
+"%p" "(void*)UINT_MAX"
 #
 "%X" 0
 "%X" 42
