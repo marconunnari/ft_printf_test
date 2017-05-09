@@ -2,34 +2,48 @@
 "%d" INT_MIN
 "%d" INT_MAX
 "%i" INT_MAX
-"%S" 'L"Heelllooo wooorld 㑄㑅㑆𐀀"'
-"%S" 'L"Aሴ𐀀"'
-"%Sseeeeeeee" 'L"Aሴ𐀀"'
-"%c char" "'a'"
-"%c char" "'z'"
-"%c char" "'\\0'"
-"%c char" "'\\n'"
+"%S" L"Heelllooo wooorld 㑄㑅㑆𐀀"
+"%S" L"Aሴ𐀀"
+"%Sseeeeeeee" L"Aሴ𐀀"
+"%c char" 'a'
+"%c char" 'z'
+"%c char" '\\0'
+"%c char" '\\n'
 "%%"
-"%%%% %%%s" '"percent"'
-"%C" "L'ሴ'"
-"%C" "L'A'"
-"%C" "L'𐀀'"
-#
+"%%%% %%%s" "percent"
+"%C" L'ሴ'
+"%C" L'A'
+"%C" L'𐀀'
 "%u" 0
-"%u" "INT_MAX + 1"
+"%u" 2147483648
 "%u" UINT_MAX
-#
 "%x" 0
 "%x" 42
 "%x" UINT_MAX
-#
 "%o" 0
 "%o" 42
 "%o" UINT_MAX
-#
-"%p" "(void*)42"
-"%p" "(void*)UINT_MAX"
-#
+"%p" 42
+"%p" UINT_MAX
 "%X" 0
 "%X" 42
 "%X" UINT_MAX
+"%D" LONG_MIN
+"%D" 0L
+"%D" 42L
+"%D" LONG_MAX
+"%07d" -42
+"%p" 0
+"%s" "hello world"
+"%s" NULL
+"%ss" "hello world"
+"%s %s" "hello" "world"
+"%.5s" "hello world"
+"%.15s" "hello world"
+"%.s" "hello world"
+"%.1s" "hello world"
+"%10.5s" "hello world"
+"%-10.5s" "hello world"
+"%15s" "hello world"
+"%-15s" "hello world"
+"%015s" "hello world"

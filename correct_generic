@@ -11,7 +11,7 @@ $args = ", $args" if ($#ARGV + 1);
 
 sub dogeneric
 {
-	my $name = "srcs/genericc";
+	my $name = "srcs/generic";
 
 	&execute ("cp ${name}.c ${name}.c.bak");
 	open(BAK, "<${name}.c.bak");
@@ -25,8 +25,8 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	&execute ("make -C ft_printf >/dev/null");
-	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
+	&execute ("make -C ft_printf_correct >/dev/null");
+	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf_correct/includes -Lft_printf_correct -lftprintf");
 	&execute ("mv ${name}.c.bak ${name}.c");
 	&execute ("./a.out && rm a.out");
 }
