@@ -1,49 +1,89 @@
-"%d" 42
-"%d" INT_MIN
-"%d" INT_MAX
-"%i" INT_MAX
-"%S" L"Heelllooo wooorld 㑄㑅㑆𐀀"
-"%S" L"Aሴ𐀀"
-"%Sseeeeeeee" L"Aሴ𐀀"
-"%c char" 'a'
-"%c char" 'z'
-"%c char" '\\0'
-"%c char" '\\n'
-"%%"
-"%%%% %%%s" "percent"
-"%C" L'ሴ'
-"%C" L'A'
-"%C" L'𐀀'
-"%u" 0
-"%u" 2147483648
-"%u" UINT_MAX
-"%x" 0
-"%x" 42
-"%x" UINT_MAX
-"%o" 0
-"%o" 42
-"%o" UINT_MAX
-"%p" 42
-"%p" UINT_MAX
-"%X" 0
-"%X" 42
-"%X" UINT_MAX
-"%D" LONG_MIN
-"%D" 0L
-"%D" 42L
-"%D" LONG_MAX
-"%07d" -42
-"%p" 0
-"%s" "hello world"
-"%s" NULL
-"%ss" "hello world"
-"%s %s" "hello" "world"
-"%.5s" "hello world"
-"%.15s" "hello world"
-"%.s" "hello world"
-"%.1s" "hello world"
-"%10.5s" "hello world"
-"%-10.5s" "hello world"
-"%15s" "hello world"
-"%-15s" "hello world"
-"%015s" "hello world"
+'"%d"' 42
+'"%d"' INT_MIN
+'"%d"' INT_MAX
+'"%i"' INT_MAX
+'"%S"' 'L"Heelllooo wooorld 㑄㑅㑆𐀀"'
+'"%S"' 'L"Aሴ𐀀"'
+'"%Sseeeeeeee"' 'L"Aሴ𐀀"'
+'"%c char"' "'a'"
+'"%c char"' "'z'"
+'"%c char"' "'\\0'"
+'"%c char"' "'\\n'"
+'"%%"'
+'"%%%% %%%s"' '"percent"'
+'"%C"' "L'ሴ'"
+'"%C"' "L'A'"
+'"%C"' "L'𐀀'"
+'"%u"' 0
+'"%u"' 2147483648
+'"%u"' UINT_MAX
+'"%x"' 0
+'"%x"' 42
+'"%x"' UINT_MAX
+'"%o"' 0
+'"%o"' 42
+'"%o"' UINT_MAX
+'"%p"' 42
+'"%p"' UINT_MAX
+'"%X"' 0
+'"%X"' 42
+'"%X"' UINT_MAX
+'"%D"' LONG_MIN
+'"%D"' 0L
+'"%D"' 42L
+'"%D"' LONG_MAX
+'"%p"' 0
+'"%s"' '"hello world"'
+'"%s"' NULL
+'"%ss"' '"hello world"'
+'"%s %s"' '"hello"' '"world"'
+'"%.5s"' '"hello world"'
+'"%.15s"' '"hello world"'
+'"%.s"' '"hello world"'
+'"%.1s"' '"hello world"'
+'"%10.5s"' '"hello world"'
+'"%-10.5s"' '"hello world"'
+'"%15s"' '"hello world"'
+'"%-15s"' '"hello world"'
+'"%015s"' '"hello world"'
+'"%-07s"' '"hello"'
+'"%07d"' 42
+'"%07d"' -42
+'"% 07d"' 42
+'"%+07d"' 42
+'"% +07d"' 42
+'"%-07d"' -42
+'"%#x"' 42
+'"%#07x"' 42
+'"%#-07x"' 42
+'"%#X"' 42
+'"%#07X"' 42
+'"%#-07X"' 42
+'"%#o"' 42
+'"%#07o"' 42
+'"%#-07o"' 42
+'"%hhd"' CHAR_MIN
+'"%hd"' SHRT_MIN
+'"%ld"' LONG_MIN
+'"%D"' LONG_MIN
+'"%lld"' LLONG_MIN
+'"%jd"' LLONG_MIN
+'"%zd"' LLONG_MIN
+'"%hhd"' CHAR_MAX
+'"%hd"' SHRT_MAX
+'"%ld"' LONG_MAX
+'"%D"' LONG_MAX
+'"%lld"' LLONG_MAX
+'"%jd"' LLONG_MAX
+'"%zd"' LLONG_MAX
+'"%07p"' 12
+'"%40u"' UINT_MAX
+'"%040u"' UINT_MAX
+'"%-40u"' UINT_MAX
+'"%hhu"' UCHAR_MAX
+'"%hu"' USHRT_MAX
+'"%lu"' ULONG_MAX
+'"%U"' ULONG_MAX
+'"%llu"' ULLONG_MAX
+'"%ju"' ULLONG_MAX
+'"%zu"' ULLONG_MAX
