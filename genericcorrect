@@ -25,7 +25,8 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -Lft_printf_correct_linux -lftprintf");
+	&execute ("make -C 42-ft_printf >/dev/null");
+	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -L42-ft_printf -lftprintf");
 	&execute ("mv ${name}.c.bak ${name}.c");
 	&execute ("./a.out && rm a.out");
 }
