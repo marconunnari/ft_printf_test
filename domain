@@ -17,7 +17,7 @@ sub dogeneric
 	open(BAK, "<${name}.c.bak");
 	open(FILE, ">${name}.c");
 	while (<BAK>) {
-		s/__FORMAT__/$format/;
+		s/__FORMAT__/\"$format\"/;
 		s/__ARGS__/$args/;
 		print FILE;
 	}
@@ -25,19 +25,13 @@ sub dogeneric
 	close BAK;
 	close FILE;
 
-	&execute ("gcc -Wno-overflow ${name}.c -Ift_printf/includes -Lft_printf_correct_linux -lftprintf");
+	&execute ("make -C ft_printf >/dev/null");
+	&execute ("gcc -Wno-overflow -o ft_printf_main ${name}.c -Ift_printf/includes -Lft_printf -lftprintf");
 	&execute ("mv ${name}.c.bak ${name}.c");
-	&execute ("./a.out && rm a.out");
 }
-
 sub execute
 {
 	my $cmd = shift;
 #	say "\$> $cmd";
 	system $cmd;
 }
-
-#my %dispatch = (
-#	"wide strings" => \&dowstr,
-#);
-#exists $dispatch{$format} ? $dispatch{$format} -> () : &dogeneric;
