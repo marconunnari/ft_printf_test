@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo " All heap blocks were freed -- no leaks are possible"

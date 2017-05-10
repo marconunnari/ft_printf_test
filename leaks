@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+./domain $@
+valgrind --leak-check=yes ./ft_printf_main 2>&1 | grep -a 'All heap blocks were freed -- no leaks are possible' | cut -c 10-
+rm ./ft_printf_main

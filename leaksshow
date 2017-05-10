@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+./domain $@
+valgrind --leak-check=yes ./ft_printf_main
+rm ./ft_printf_main

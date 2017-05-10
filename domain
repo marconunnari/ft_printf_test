@@ -17,7 +17,7 @@ sub dogeneric
 	open(BAK, "<${name}.c.bak");
 	open(FILE, ">${name}.c");
 	while (<BAK>) {
-		s/__FORMAT__/\"$format\"/;
+		s/__FORMAT__/$format/;
 		s/__ARGS__/$args/;
 		print FILE;
 	}
